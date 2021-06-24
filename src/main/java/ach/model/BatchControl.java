@@ -13,7 +13,7 @@ import java.util.Objects;
 public class BatchControl {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("serviceClassCode")
 	private Integer serviceClassCode = null;
@@ -42,8 +42,8 @@ public class BatchControl {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public BatchControl ID(String ID) {
-		this.ID = ID;
+	public BatchControl ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -52,12 +52,12 @@ public class BatchControl {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public BatchControl serviceClassCode(Integer serviceClassCode) {
@@ -238,7 +238,7 @@ public class BatchControl {
 			return false;
 		}
 		BatchControl batchControl = (BatchControl) o;
-		return Objects.equals(this.ID, batchControl.ID) &&
+		return Objects.equals(this.id, batchControl.id) &&
 			Objects.equals(this.serviceClassCode, batchControl.serviceClassCode) &&
 			Objects.equals(this.entryAddendaCount, batchControl.entryAddendaCount) &&
 			Objects.equals(this.entryHash, batchControl.entryHash) &&
@@ -252,7 +252,7 @@ public class BatchControl {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID,
+		return Objects.hash(id,
 		                    serviceClassCode,
 		                    entryAddendaCount,
 		                    entryHash,
@@ -269,7 +269,7 @@ public class BatchControl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class BatchControl {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    entryAddendaCount: ").append(toIndentedString(entryAddendaCount)).append("\n");
 		sb.append("    entryHash: ").append(toIndentedString(entryHash)).append("\n");

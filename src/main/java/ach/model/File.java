@@ -15,7 +15,7 @@ import java.util.Objects;
 public class File {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("fileHeader")
 	private FileHeader fileHeader = null;
@@ -35,8 +35,8 @@ public class File {
 	@JsonProperty("ReturnEntries")
 	private List<Batch> returnEntries = null;
 
-	public File ID(String ID) {
-		this.ID = ID;
+	public File ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -45,12 +45,12 @@ public class File {
 	 *
 	 * @return ID required
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public File fileHeader(FileHeader fileHeader) {
@@ -202,7 +202,7 @@ public class File {
 			return false;
 		}
 		File file = (File) o;
-		return Objects.equals(this.ID, file.ID) &&
+		return Objects.equals(this.id, file.id) &&
 			Objects.equals(this.fileHeader, file.fileHeader) &&
 			Objects.equals(this.batches, file.batches) &&
 			Objects.equals(this.iaTBatches, file.iaTBatches) &&
@@ -213,7 +213,7 @@ public class File {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID, fileHeader, batches, iaTBatches, fileControl, notificationOfChange, returnEntries);
+		return Objects.hash(id, fileHeader, batches, iaTBatches, fileControl, notificationOfChange, returnEntries);
 	}
 
 	@Override
@@ -221,7 +221,7 @@ public class File {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class File {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    fileHeader: ").append(toIndentedString(fileHeader)).append("\n");
 		sb.append("    batches: ").append(toIndentedString(batches)).append("\n");
 		sb.append("    iaTBatches: ").append(toIndentedString(iaTBatches)).append("\n");

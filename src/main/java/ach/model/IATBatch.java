@@ -15,7 +15,7 @@ import java.util.Objects;
 public class IATBatch {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("IATBatchHeader")
 	private IATBatchHeader iaTBatchHeader = null;
@@ -26,8 +26,8 @@ public class IATBatch {
 	@JsonProperty("batchControl")
 	private BatchControl batchControl = null;
 
-	public IATBatch ID(String ID) {
-		this.ID = ID;
+	public IATBatch ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -36,12 +36,12 @@ public class IATBatch {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public IATBatch iaTBatchHeader(IATBatchHeader iaTBatchHeader) {
@@ -112,7 +112,7 @@ public class IATBatch {
 			return false;
 		}
 		IATBatch iaTBatch = (IATBatch) o;
-		return Objects.equals(this.ID, iaTBatch.ID) &&
+		return Objects.equals(this.id, iaTBatch.id) &&
 			Objects.equals(this.iaTBatchHeader, iaTBatch.iaTBatchHeader) &&
 			Objects.equals(this.iaTEntryDetails, iaTBatch.iaTEntryDetails) &&
 			Objects.equals(this.batchControl, iaTBatch.batchControl);
@@ -120,7 +120,7 @@ public class IATBatch {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID, iaTBatchHeader, iaTEntryDetails, batchControl);
+		return Objects.hash(id, iaTBatchHeader, iaTEntryDetails, batchControl);
 	}
 
 	@Override
@@ -128,7 +128,7 @@ public class IATBatch {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class IATBatch {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    iaTBatchHeader: ").append(toIndentedString(iaTBatchHeader)).append("\n");
 		sb.append("    iaTEntryDetails: ").append(toIndentedString(iaTEntryDetails)).append("\n");
 		sb.append("    batchControl: ").append(toIndentedString(batchControl)).append("\n");

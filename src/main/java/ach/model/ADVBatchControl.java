@@ -13,7 +13,7 @@ import java.util.Objects;
 public class ADVBatchControl {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("serviceClassCode")
 	private Integer serviceClassCode = null;
@@ -39,8 +39,8 @@ public class ADVBatchControl {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public ADVBatchControl ID(String ID) {
-		this.ID = ID;
+	public ADVBatchControl ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -49,12 +49,12 @@ public class ADVBatchControl {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public ADVBatchControl serviceClassCode(Integer serviceClassCode) {
@@ -212,7 +212,7 @@ public class ADVBatchControl {
 			return false;
 		}
 		ADVBatchControl adVBatchControl = (ADVBatchControl) o;
-		return Objects.equals(this.ID, adVBatchControl.ID) &&
+		return Objects.equals(this.id, adVBatchControl.id) &&
 			Objects.equals(this.serviceClassCode, adVBatchControl.serviceClassCode) &&
 			Objects.equals(this.entryAddendaCount, adVBatchControl.entryAddendaCount) &&
 			Objects.equals(this.entryHash, adVBatchControl.entryHash) &&
@@ -225,7 +225,7 @@ public class ADVBatchControl {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID, serviceClassCode, entryAddendaCount, entryHash, totalDebit, totalCredit, achOperatorData, odFIIdentification, batchNumber);
+		return Objects.hash(id, serviceClassCode, entryAddendaCount, entryHash, totalDebit, totalCredit, achOperatorData, odFIIdentification, batchNumber);
 	}
 
 	@Override
@@ -233,7 +233,7 @@ public class ADVBatchControl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class ADVBatchControl {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    entryAddendaCount: ").append(toIndentedString(entryAddendaCount)).append("\n");
 		sb.append("    entryHash: ").append(toIndentedString(entryHash)).append("\n");

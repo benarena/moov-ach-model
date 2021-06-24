@@ -16,7 +16,7 @@ import java.util.Objects;
 public class BatchHeader {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("serviceClassCode")
 	private Integer serviceClassCode = null;
@@ -52,8 +52,8 @@ public class BatchHeader {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public BatchHeader ID(String ID) {
-		this.ID = ID;
+	public BatchHeader ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -62,12 +62,12 @@ public class BatchHeader {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public BatchHeader serviceClassCode(Integer serviceClassCode) {
@@ -287,7 +287,7 @@ public class BatchHeader {
 			return false;
 		}
 		BatchHeader batchHeader = (BatchHeader) o;
-		return Objects.equals(this.ID, batchHeader.ID) &&
+		return Objects.equals(this.id, batchHeader.id) &&
 			Objects.equals(this.serviceClassCode, batchHeader.serviceClassCode) &&
 			Objects.equals(this.companyName, batchHeader.companyName) &&
 			Objects.equals(this.companyDiscretionaryData, batchHeader.companyDiscretionaryData) &&
@@ -303,7 +303,7 @@ public class BatchHeader {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID,
+		return Objects.hash(id,
 		                    serviceClassCode,
 		                    companyName,
 		                    companyDiscretionaryData,
@@ -322,7 +322,7 @@ public class BatchHeader {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class BatchHeader {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
 		sb.append("    companyDiscretionaryData: ").append(toIndentedString(companyDiscretionaryData)).append("\n");

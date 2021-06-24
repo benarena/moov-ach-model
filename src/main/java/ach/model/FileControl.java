@@ -13,7 +13,7 @@ import java.util.Objects;
 public class FileControl {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("batchCount")
 	private Integer batchCount = null;
@@ -33,8 +33,8 @@ public class FileControl {
 	@JsonProperty("totalCredit")
 	private Integer totalCredit = null;
 
-	public FileControl ID(String ID) {
-		this.ID = ID;
+	public FileControl ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -43,12 +43,12 @@ public class FileControl {
 	 *
 	 * @return ID required
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public FileControl batchCount(Integer batchCount) {
@@ -171,7 +171,7 @@ public class FileControl {
 			return false;
 		}
 		FileControl fileControl = (FileControl) o;
-		return Objects.equals(this.ID, fileControl.ID) &&
+		return Objects.equals(this.id, fileControl.id) &&
 			Objects.equals(this.batchCount, fileControl.batchCount) &&
 			Objects.equals(this.blockCount, fileControl.blockCount) &&
 			Objects.equals(this.entryAddendaCount, fileControl.entryAddendaCount) &&
@@ -182,7 +182,7 @@ public class FileControl {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID, batchCount, blockCount, entryAddendaCount, entryHash, totalDebit, totalCredit);
+		return Objects.hash(id, batchCount, blockCount, entryAddendaCount, entryHash, totalDebit, totalCredit);
 	}
 
 	@Override
@@ -190,7 +190,7 @@ public class FileControl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class FileControl {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    batchCount: ").append(toIndentedString(batchCount)).append("\n");
 		sb.append("    blockCount: ").append(toIndentedString(blockCount)).append("\n");
 		sb.append("    entryAddendaCount: ").append(toIndentedString(entryAddendaCount)).append("\n");

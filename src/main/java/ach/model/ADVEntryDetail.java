@@ -15,7 +15,7 @@ import java.util.Objects;
 public class ADVEntryDetail {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("transactionCode")
 	private Integer transactionCode = null;
@@ -65,8 +65,8 @@ public class ADVEntryDetail {
 	@JsonProperty("category")
 	private String category = null;
 
-	public ADVEntryDetail ID(String ID) {
-		this.ID = ID;
+	public ADVEntryDetail ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -75,12 +75,12 @@ public class ADVEntryDetail {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public ADVEntryDetail transactionCode(Integer transactionCode) {
@@ -396,7 +396,7 @@ public class ADVEntryDetail {
 			return false;
 		}
 		ADVEntryDetail adVEntryDetail = (ADVEntryDetail) o;
-		return Objects.equals(this.ID, adVEntryDetail.ID) &&
+		return Objects.equals(this.id, adVEntryDetail.id) &&
 			Objects.equals(this.transactionCode, adVEntryDetail.transactionCode) &&
 			Objects.equals(this.rdFIIdentification, adVEntryDetail.rdFIIdentification) &&
 			Objects.equals(this.checkDigit, adVEntryDetail.checkDigit) &&
@@ -417,7 +417,7 @@ public class ADVEntryDetail {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID,
+		return Objects.hash(id,
 		                    transactionCode,
 		                    rdFIIdentification,
 		                    checkDigit,
@@ -441,7 +441,7 @@ public class ADVEntryDetail {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class ADVEntryDetail {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    transactionCode: ").append(toIndentedString(transactionCode)).append("\n");
 		sb.append("    rdFIIdentification: ").append(toIndentedString(rdFIIdentification)).append("\n");
 		sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");

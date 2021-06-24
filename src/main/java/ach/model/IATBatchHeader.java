@@ -16,7 +16,7 @@ import java.util.Objects;
 public class IATBatchHeader {
 
 	@JsonProperty("ID")
-	private String ID = null;
+	private String id = null;
 
 	@JsonProperty("serviceClassCode")
 	private Integer serviceClassCode = null;
@@ -64,8 +64,8 @@ public class IATBatchHeader {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public IATBatchHeader ID(String ID) {
-		this.ID = ID;
+	public IATBatchHeader ID(String id) {
+		this.id = id;
 		return this;
 	}
 
@@ -74,12 +74,12 @@ public class IATBatchHeader {
 	 *
 	 * @return ID
 	 **/
-	public String getID() {
-		return ID;
+	public String getId() {
+		return id;
 	}
 
-	public void setID(String ID) {
-		this.ID = ID;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public IATBatchHeader serviceClassCode(Integer serviceClassCode) {
@@ -384,7 +384,7 @@ public class IATBatchHeader {
 			return false;
 		}
 		IATBatchHeader iaTBatchHeader = (IATBatchHeader) o;
-		return Objects.equals(this.ID, iaTBatchHeader.ID) &&
+		return Objects.equals(this.id, iaTBatchHeader.id) &&
 			Objects.equals(this.serviceClassCode, iaTBatchHeader.serviceClassCode) &&
 			Objects.equals(this.iaTIndicator, iaTBatchHeader.iaTIndicator) &&
 			Objects.equals(this.foreignExchangeIndicator, iaTBatchHeader.foreignExchangeIndicator) &&
@@ -404,7 +404,7 @@ public class IATBatchHeader {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID,
+		return Objects.hash(id,
 		                    serviceClassCode,
 		                    iaTIndicator,
 		                    foreignExchangeIndicator,
@@ -427,7 +427,7 @@ public class IATBatchHeader {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class IATBatchHeader {\n");
 
-		sb.append("    ID: ").append(toIndentedString(ID)).append("\n");
+		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    iaTIndicator: ").append(toIndentedString(iaTIndicator)).append("\n");
 		sb.append("    foreignExchangeIndicator: ").append(toIndentedString(foreignExchangeIndicator)).append("\n");
