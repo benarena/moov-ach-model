@@ -1,7 +1,5 @@
-package barena.ach.model;
+package ach.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda99
+ * Addenda98
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda99 {
+public class Addenda98 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -20,26 +18,22 @@ public class Addenda99 {
 	@JsonProperty("typeCode")
 	private String typeCode = null;
 
-	@JsonProperty("returnCode")
-	private String returnCode = null;
+	@JsonProperty("changeCode")
+	private String changeCode = null;
 
 	@JsonProperty("originalTrace")
 	private String originalTrace = null;
 
-	@JsonProperty("dateOfDeath")
-	@JsonFormat(shape = Shape.STRING, pattern="yyMMdd")
-	private String dateOfDeath = null;
-
 	@JsonProperty("originalDFI")
 	private String originalDFI = null;
 
-	@JsonProperty("addendaInformation")
-	private String addendaInformation = null;
+	@JsonProperty("correctedData")
+	private String correctedData = null;
 
 	@JsonProperty("traceNumber")
 	private String traceNumber = null;
 
-	public Addenda99 id(String id) {
+	public Addenda98 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -57,13 +51,13 @@ public class Addenda99 {
 		this.id = id;
 	}
 
-	public Addenda99 typeCode(String typeCode) {
+	public Addenda98 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 99 - NACHA regulations
+	 * 98 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -75,25 +69,25 @@ public class Addenda99 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda99 returnCode(String returnCode) {
-		this.returnCode = returnCode;
+	public Addenda98 changeCode(String changeCode) {
+		this.changeCode = changeCode;
 		return this;
 	}
 
 	/**
-	 * Standard code used by an ACH Operator or RDFI to describe the reason for returning an Entry.
+	 * ChangeCode field contains a standard code used by an ACH Operator or RDFI to describe the reason for a change Entry.
 	 *
-	 * @return returnCode required
+	 * @return changeCode required
 	 **/
-	public String getReturnCode() {
-		return returnCode;
+	public String getChangeCode() {
+		return changeCode;
 	}
 
-	public void setReturnCode(String returnCode) {
-		this.returnCode = returnCode;
+	public void setChangeCode(String changeCode) {
+		this.changeCode = changeCode;
 	}
 
-	public Addenda99 originalTrace(String originalTrace) {
+	public Addenda98 originalTrace(String originalTrace) {
 		this.originalTrace = originalTrace;
 		return this;
 	}
@@ -113,33 +107,14 @@ public class Addenda99 {
 		this.originalTrace = originalTrace;
 	}
 
-	public Addenda99 dateOfDeath(String dateOfDeath) {
-		this.dateOfDeath = dateOfDeath;
-		return this;
-	}
-
-	/**
-	 * The field date of death is to be supplied on Entries being returned for reason of death (return reason codes R14 and R15). (Format YYMMDD - Y=Year,
-	 * M=Month, D=Day)
-	 *
-	 * @return dateOfDeath
-	 **/
-	public String getDateOfDeath() {
-		return dateOfDeath;
-	}
-
-	public void setDateOfDeath(String dateOfDeath) {
-		this.dateOfDeath = dateOfDeath;
-	}
-
-	public Addenda99 originalDFI(String originalDFI) {
+	public Addenda98 originalDFI(String originalDFI) {
 		this.originalDFI = originalDFI;
 		return this;
 	}
 
 	/**
-	 * Contains the Receiving DFI Identification (addenda.RDFIIdentification) as originally included on the forward Entry or Prenotification that the RDFI is
-	 * returning or correcting.
+	 * The Receiving DFI Identification (addenda.RDFIIdentification) as originally included on the forward Entry or Prenotification that the RDFI is returning
+	 * or correcting.
 	 *
 	 * @return originalDFI required
 	 **/
@@ -151,31 +126,31 @@ public class Addenda99 {
 		this.originalDFI = originalDFI;
 	}
 
-	public Addenda99 addendaInformation(String addendaInformation) {
-		this.addendaInformation = addendaInformation;
+	public Addenda98 correctedData(String correctedData) {
+		this.correctedData = correctedData;
 		return this;
 	}
 
 	/**
-	 * Information related to the return
+	 * Correct field value of what changeCode references
 	 *
-	 * @return addendaInformation
+	 * @return correctedData required
 	 **/
-	public String getAddendaInformation() {
-		return addendaInformation;
+	public String getCorrectedData() {
+		return correctedData;
 	}
 
-	public void setAddendaInformation(String addendaInformation) {
-		this.addendaInformation = addendaInformation;
+	public void setCorrectedData(String correctedData) {
+		this.correctedData = correctedData;
 	}
 
-	public Addenda99 traceNumber(String traceNumber) {
+	public Addenda98 traceNumber(String traceNumber) {
 		this.traceNumber = traceNumber;
 		return this;
 	}
 
 	/**
-	 * Matches the Entry Detail Trace Number of the entry being returned.
+	 * Entry Detail Trace Number
 	 *
 	 * @return traceNumber
 	 **/
@@ -195,34 +170,32 @@ public class Addenda99 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda99 addenda99 = (Addenda99) o;
-		return Objects.equals(this.id, addenda99.id) &&
-			Objects.equals(this.typeCode, addenda99.typeCode) &&
-			Objects.equals(this.returnCode, addenda99.returnCode) &&
-			Objects.equals(this.originalTrace, addenda99.originalTrace) &&
-			Objects.equals(this.dateOfDeath, addenda99.dateOfDeath) &&
-			Objects.equals(this.originalDFI, addenda99.originalDFI) &&
-			Objects.equals(this.addendaInformation, addenda99.addendaInformation) &&
-			Objects.equals(this.traceNumber, addenda99.traceNumber);
+		Addenda98 addenda98 = (Addenda98) o;
+		return Objects.equals(this.id, addenda98.id) &&
+			Objects.equals(this.typeCode, addenda98.typeCode) &&
+			Objects.equals(this.changeCode, addenda98.changeCode) &&
+			Objects.equals(this.originalTrace, addenda98.originalTrace) &&
+			Objects.equals(this.originalDFI, addenda98.originalDFI) &&
+			Objects.equals(this.correctedData, addenda98.correctedData) &&
+			Objects.equals(this.traceNumber, addenda98.traceNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeCode, returnCode, originalTrace, dateOfDeath, originalDFI, addendaInformation, traceNumber);
+		return Objects.hash(id, typeCode, changeCode, originalTrace, originalDFI, correctedData, traceNumber);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda99 {\n");
+		sb.append("class Addenda98 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");
-		sb.append("    returnCode: ").append(toIndentedString(returnCode)).append("\n");
+		sb.append("    changeCode: ").append(toIndentedString(changeCode)).append("\n");
 		sb.append("    originalTrace: ").append(toIndentedString(originalTrace)).append("\n");
-		sb.append("    dateOfDeath: ").append(toIndentedString(dateOfDeath)).append("\n");
 		sb.append("    originalDFI: ").append(toIndentedString(originalDFI)).append("\n");
-		sb.append("    addendaInformation: ").append(toIndentedString(addendaInformation)).append("\n");
+		sb.append("    correctedData: ").append(toIndentedString(correctedData)).append("\n");
 		sb.append("    traceNumber: ").append(toIndentedString(traceNumber)).append("\n");
 		sb.append("}");
 		return sb.toString();

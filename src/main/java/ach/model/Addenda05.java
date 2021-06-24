@@ -1,4 +1,4 @@
-package barena.ach.model;
+package ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda15
+ * Addenda05
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda15 {
+public class Addenda05 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -18,16 +18,16 @@ public class Addenda15 {
 	@JsonProperty("typeCode")
 	private String typeCode = null;
 
-	@JsonProperty("receiverIDNumber")
-	private String receiverIDNumber = null;
+	@JsonProperty("paymentRelatedInformation")
+	private String paymentRelatedInformation = null;
 
-	@JsonProperty("receiverStreetAddress")
-	private String receiverStreetAddress = null;
+	@JsonProperty("sequenceNumber")
+	private Integer sequenceNumber = null;
 
 	@JsonProperty("entryDetailSequenceNumber")
 	private Integer entryDetailSequenceNumber = null;
 
-	public Addenda15 id(String id) {
+	public Addenda05 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -45,13 +45,13 @@ public class Addenda15 {
 		this.id = id;
 	}
 
-	public Addenda15 typeCode(String typeCode) {
+	public Addenda05 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 15 - NACHA regulations
+	 * 05 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -63,44 +63,44 @@ public class Addenda15 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda15 receiverIDNumber(String receiverIDNumber) {
-		this.receiverIDNumber = receiverIDNumber;
+	public Addenda05 paymentRelatedInformation(String paymentRelatedInformation) {
+		this.paymentRelatedInformation = paymentRelatedInformation;
 		return this;
 	}
 
 	/**
-	 * Receiver Identification Number contains the accounting number by which the Originator is known to the Receiver for descriptive purposes. NACHA Rules
-	 * recommend but do not require the RDFI to print the contents of this field on the receiver's statement.
+	 * Text for describing the related payment
 	 *
-	 * @return receiverIDNumber
+	 * @return paymentRelatedInformation required
 	 **/
-	public String getReceiverIDNumber() {
-		return receiverIDNumber;
+	public String getPaymentRelatedInformation() {
+		return paymentRelatedInformation;
 	}
 
-	public void setReceiverIDNumber(String receiverIDNumber) {
-		this.receiverIDNumber = receiverIDNumber;
+	public void setPaymentRelatedInformation(String paymentRelatedInformation) {
+		this.paymentRelatedInformation = paymentRelatedInformation;
 	}
 
-	public Addenda15 receiverStreetAddress(String receiverStreetAddress) {
-		this.receiverStreetAddress = receiverStreetAddress;
+	public Addenda05 sequenceNumber(int sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 		return this;
 	}
 
 	/**
-	 * Receiver's physical address
+	 * SequenceNumber is consecutively assigned to each Addenda05 Record following an Entry Detail Record. The first Addenda05 sequence number must always be a
+	 * 1.
 	 *
-	 * @return receiverStreetAddress required
+	 * @return sequenceNumber required
 	 **/
-	public String getReceiverStreetAddress() {
-		return receiverStreetAddress;
+	public Integer getSequenceNumber() {
+		return sequenceNumber;
 	}
 
-	public void setReceiverStreetAddress(String receiverStreetAddress) {
-		this.receiverStreetAddress = receiverStreetAddress;
+	public void setSequenceNumber(Integer sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 	}
 
-	public Addenda15 entryDetailSequenceNumber(Integer entryDetailSequenceNumber) {
+	public Addenda05 entryDetailSequenceNumber(int entryDetailSequenceNumber) {
 		this.entryDetailSequenceNumber = entryDetailSequenceNumber;
 		return this;
 	}
@@ -127,28 +127,28 @@ public class Addenda15 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda15 addenda15 = (Addenda15) o;
-		return Objects.equals(this.id, addenda15.id) &&
-			Objects.equals(this.typeCode, addenda15.typeCode) &&
-			Objects.equals(this.receiverIDNumber, addenda15.receiverIDNumber) &&
-			Objects.equals(this.receiverStreetAddress, addenda15.receiverStreetAddress) &&
-			Objects.equals(this.entryDetailSequenceNumber, addenda15.entryDetailSequenceNumber);
+		Addenda05 addenda05 = (Addenda05) o;
+		return Objects.equals(this.id, addenda05.id) &&
+			Objects.equals(this.typeCode, addenda05.typeCode) &&
+			Objects.equals(this.paymentRelatedInformation, addenda05.paymentRelatedInformation) &&
+			Objects.equals(this.sequenceNumber, addenda05.sequenceNumber) &&
+			Objects.equals(this.entryDetailSequenceNumber, addenda05.entryDetailSequenceNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeCode, receiverIDNumber, receiverStreetAddress, entryDetailSequenceNumber);
+		return Objects.hash(id, typeCode, paymentRelatedInformation, sequenceNumber, entryDetailSequenceNumber);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda15 {\n");
+		sb.append("class Addenda05 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");
-		sb.append("    receiverIDNumber: ").append(toIndentedString(receiverIDNumber)).append("\n");
-		sb.append("    receiverStreetAddress: ").append(toIndentedString(receiverStreetAddress)).append("\n");
+		sb.append("    paymentRelatedInformation: ").append(toIndentedString(paymentRelatedInformation)).append("\n");
+		sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
 		sb.append("    entryDetailSequenceNumber: ").append(toIndentedString(entryDetailSequenceNumber)).append("\n");
 		sb.append("}");
 		return sb.toString();

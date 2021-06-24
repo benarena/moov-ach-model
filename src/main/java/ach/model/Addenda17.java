@@ -1,4 +1,4 @@
-package barena.ach.model;
+package ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda05
+ * Addenda17
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda05 {
+public class Addenda17 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -27,7 +27,7 @@ public class Addenda05 {
 	@JsonProperty("entryDetailSequenceNumber")
 	private Integer entryDetailSequenceNumber = null;
 
-	public Addenda05 id(String id) {
+	public Addenda17 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -45,13 +45,13 @@ public class Addenda05 {
 		this.id = id;
 	}
 
-	public Addenda05 typeCode(String typeCode) {
+	public Addenda17 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 05 - NACHA regulations
+	 * 17 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -63,13 +63,13 @@ public class Addenda05 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda05 paymentRelatedInformation(String paymentRelatedInformation) {
+	public Addenda17 paymentRelatedInformation(String paymentRelatedInformation) {
 		this.paymentRelatedInformation = paymentRelatedInformation;
 		return this;
 	}
 
 	/**
-	 * Text for describing the related payment
+	 * Additional information related to the payment
 	 *
 	 * @return paymentRelatedInformation required
 	 **/
@@ -81,13 +81,13 @@ public class Addenda05 {
 		this.paymentRelatedInformation = paymentRelatedInformation;
 	}
 
-	public Addenda05 sequenceNumber(int sequenceNumber) {
+	public Addenda17 sequenceNumber(Integer sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
 		return this;
 	}
 
 	/**
-	 * SequenceNumber is consecutively assigned to each Addenda05 Record following an Entry Detail Record. The first Addenda05 sequence number must always be a
+	 * SequenceNumber is consecutively assigned to each Addenda17 Record following an Entry Detail Record. The first Addenda17 sequence number must always be a
 	 * 1.
 	 *
 	 * @return sequenceNumber required
@@ -100,7 +100,7 @@ public class Addenda05 {
 		this.sequenceNumber = sequenceNumber;
 	}
 
-	public Addenda05 entryDetailSequenceNumber(int entryDetailSequenceNumber) {
+	public Addenda17 entryDetailSequenceNumber(Integer entryDetailSequenceNumber) {
 		this.entryDetailSequenceNumber = entryDetailSequenceNumber;
 		return this;
 	}
@@ -127,12 +127,12 @@ public class Addenda05 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda05 addenda05 = (Addenda05) o;
-		return Objects.equals(this.id, addenda05.id) &&
-			Objects.equals(this.typeCode, addenda05.typeCode) &&
-			Objects.equals(this.paymentRelatedInformation, addenda05.paymentRelatedInformation) &&
-			Objects.equals(this.sequenceNumber, addenda05.sequenceNumber) &&
-			Objects.equals(this.entryDetailSequenceNumber, addenda05.entryDetailSequenceNumber);
+		Addenda17 addenda17 = (Addenda17) o;
+		return Objects.equals(this.id, addenda17.id) &&
+			Objects.equals(this.typeCode, addenda17.typeCode) &&
+			Objects.equals(this.paymentRelatedInformation, addenda17.paymentRelatedInformation) &&
+			Objects.equals(this.sequenceNumber, addenda17.sequenceNumber) &&
+			Objects.equals(this.entryDetailSequenceNumber, addenda17.entryDetailSequenceNumber);
 	}
 
 	@Override
@@ -143,7 +143,7 @@ public class Addenda05 {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda05 {\n");
+		sb.append("class Addenda17 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");

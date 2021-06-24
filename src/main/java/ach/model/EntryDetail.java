@@ -1,4 +1,4 @@
-package barena.ach.model;
+package ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
