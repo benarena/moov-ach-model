@@ -15,7 +15,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class IATBatchHeader {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
@@ -64,15 +64,15 @@ public class IATBatchHeader {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public IATBatchHeader ID(String id) {
+	public IATBatchHeader id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * ID is a client-defined string used as a reference to this record.
+	 * id is a client-defined string used as a reference to this record.
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -427,7 +427,7 @@ public class IATBatchHeader {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class IATBatchHeader {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    iaTIndicator: ").append(toIndentedString(iaTIndicator)).append("\n");
 		sb.append("    foreignExchangeIndicator: ").append(toIndentedString(foreignExchangeIndicator)).append("\n");

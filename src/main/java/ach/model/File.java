@@ -14,7 +14,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class File {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("fileHeader")
@@ -35,15 +35,15 @@ public class File {
 	@JsonProperty("ReturnEntries")
 	private List<Batch> returnEntries = null;
 
-	public File ID(String id) {
+	public File id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * File ID
+	 * File id
 	 *
-	 * @return ID required
+	 * @return id required
 	 **/
 	public String getId() {
 		return id;
@@ -221,7 +221,7 @@ public class File {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class File {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    fileHeader: ").append(toIndentedString(fileHeader)).append("\n");
 		sb.append("    batches: ").append(toIndentedString(batches)).append("\n");
 		sb.append("    iaTBatches: ").append(toIndentedString(iaTBatches)).append("\n");

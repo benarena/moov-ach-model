@@ -14,7 +14,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class ADVEntryDetail {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("transactionCode")
@@ -65,15 +65,15 @@ public class ADVEntryDetail {
 	@JsonProperty("category")
 	private String category = null;
 
-	public ADVEntryDetail ID(String id) {
+	public ADVEntryDetail id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * Entry Detail ID
+	 * Entry Detail id
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -441,7 +441,7 @@ public class ADVEntryDetail {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class ADVEntryDetail {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    transactionCode: ").append(toIndentedString(transactionCode)).append("\n");
 		sb.append("    rdFIIdentification: ").append(toIndentedString(rdFIIdentification)).append("\n");
 		sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");

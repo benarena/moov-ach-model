@@ -12,7 +12,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class FileControl {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("batchCount")
@@ -33,15 +33,15 @@ public class FileControl {
 	@JsonProperty("totalCredit")
 	private Integer totalCredit = null;
 
-	public FileControl ID(String id) {
+	public FileControl id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * File ID
+	 * File id
 	 *
-	 * @return ID required
+	 * @return id required
 	 **/
 	public String getId() {
 		return id;
@@ -190,7 +190,7 @@ public class FileControl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class FileControl {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    batchCount: ").append(toIndentedString(batchCount)).append("\n");
 		sb.append("    blockCount: ").append(toIndentedString(blockCount)).append("\n");
 		sb.append("    entryAddendaCount: ").append(toIndentedString(entryAddendaCount)).append("\n");

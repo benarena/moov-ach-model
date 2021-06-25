@@ -12,7 +12,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class IATEntryDetail {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("transactionCode")
@@ -81,15 +81,15 @@ public class IATEntryDetail {
 	@JsonProperty("category")
 	private String category = null;
 
-	public IATEntryDetail ID(String id) {
+	public IATEntryDetail id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * Entry Detail ID
+	 * Entry Detail id
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -565,7 +565,7 @@ public class IATEntryDetail {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class IATEntryDetail {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    transactionCode: ").append(toIndentedString(transactionCode)).append("\n");
 		sb.append("    rdFIIdentification: ").append(toIndentedString(rdFIIdentification)).append("\n");
 		sb.append("    checkDigit: ").append(toIndentedString(checkDigit)).append("\n");

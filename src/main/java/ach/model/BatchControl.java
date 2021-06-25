@@ -12,7 +12,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class BatchControl {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
@@ -42,15 +42,15 @@ public class BatchControl {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public BatchControl ID(String id) {
+	public BatchControl id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * Batch ID
+	 * Batch id
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -269,7 +269,7 @@ public class BatchControl {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class BatchControl {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    entryAddendaCount: ").append(toIndentedString(entryAddendaCount)).append("\n");
 		sb.append("    entryHash: ").append(toIndentedString(entryHash)).append("\n");

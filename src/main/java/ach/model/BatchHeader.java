@@ -15,7 +15,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class BatchHeader {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
@@ -52,15 +52,15 @@ public class BatchHeader {
 	@JsonProperty("batchNumber")
 	private Integer batchNumber = null;
 
-	public BatchHeader ID(String id) {
+	public BatchHeader id(String id) {
 		this.id = id;
 		return this;
 	}
 
 	/**
-	 * A client-defined ID used as a reference to this batch
+	 * A client-defined id used as a reference to this batch
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -322,7 +322,7 @@ public class BatchHeader {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class BatchHeader {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    serviceClassCode: ").append(toIndentedString(serviceClassCode)).append("\n");
 		sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
 		sb.append("    companyDiscretionaryData: ").append(toIndentedString(companyDiscretionaryData)).append("\n");

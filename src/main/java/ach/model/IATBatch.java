@@ -14,7 +14,7 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class IATBatch {
 
-	@JsonProperty("ID")
+	@JsonProperty("id")
 	private String id = null;
 
 	@JsonProperty("IATBatchHeader")
@@ -26,7 +26,7 @@ public class IATBatch {
 	@JsonProperty("batchControl")
 	private BatchControl batchControl = null;
 
-	public IATBatch ID(String id) {
+	public IATBatch id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -34,7 +34,7 @@ public class IATBatch {
 	/**
 	 * Client-defined string used as a reference to this record.
 	 *
-	 * @return ID
+	 * @return id
 	 **/
 	public String getId() {
 		return id;
@@ -128,7 +128,7 @@ public class IATBatch {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class IATBatch {\n");
 
-		sb.append("    ID: ").append(toIndentedString(id)).append("\n");
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    iaTBatchHeader: ").append(toIndentedString(iaTBatchHeader)).append("\n");
 		sb.append("    iaTEntryDetails: ").append(toIndentedString(iaTEntryDetails)).append("\n");
 		sb.append("    batchControl: ").append(toIndentedString(batchControl)).append("\n");
