@@ -17,17 +17,20 @@ public class File {
 	@JsonProperty("id")
 	private String id = null;
 
-	@JsonProperty("fileHeader")
+	@JsonProperty(value = "fileHeader", required = true)
 	private FileHeader fileHeader = null;
 
-	@JsonProperty("batches")
+	@JsonProperty(value = "batches", required = true)
 	private List<Batch> batches = null;
 
 	@JsonProperty("IATBatches")
 	private List<IATBatch> iaTBatches = null;
 
-	@JsonProperty("fileControl")
+	@JsonProperty(value = "fileControl", required = true)
 	private FileControl fileControl = null;
+
+	@JsonProperty("fileADVControl")
+	private ADVFileControl fileADVControl = null;
 
 	@JsonProperty("NotificationOfChange")
 	private List<Batch> notificationOfChange = null;
@@ -141,6 +144,19 @@ public class File {
 		this.fileControl = fileControl;
 	}
 
+	public File fileADVControl(ADVFileControl fileADVControl) {
+		this.fileADVControl = fileADVControl;
+		return this;
+	}
+
+	public ADVFileControl getFileADVControl() {
+		return fileADVControl;
+	}
+
+	public void setFileADVControl(final ADVFileControl fileADVControl) {
+		this.fileADVControl = fileADVControl;
+	}
+
 	public File notificationOfChange(List<Batch> notificationOfChange) {
 		this.notificationOfChange = notificationOfChange;
 		return this;
@@ -207,13 +223,14 @@ public class File {
 			Objects.equals(this.batches, file.batches) &&
 			Objects.equals(this.iaTBatches, file.iaTBatches) &&
 			Objects.equals(this.fileControl, file.fileControl) &&
+			Objects.equals(this.fileADVControl, file.fileADVControl) &&
 			Objects.equals(this.notificationOfChange, file.notificationOfChange) &&
 			Objects.equals(this.returnEntries, file.returnEntries);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, fileHeader, batches, iaTBatches, fileControl, notificationOfChange, returnEntries);
+		return Objects.hash(id, fileHeader, batches, iaTBatches, fileControl, fileADVControl, notificationOfChange, returnEntries);
 	}
 
 	@Override
@@ -226,6 +243,7 @@ public class File {
 		sb.append("    batches: ").append(toIndentedString(batches)).append("\n");
 		sb.append("    iaTBatches: ").append(toIndentedString(iaTBatches)).append("\n");
 		sb.append("    fileControl: ").append(toIndentedString(fileControl)).append("\n");
+		sb.append("    fileADVControl: ").append(toIndentedString(fileADVControl)).append("\n");
 		sb.append("    notificationOfChange: ").append(toIndentedString(notificationOfChange)).append("\n");
 		sb.append("    returnEntries: ").append(toIndentedString(returnEntries)).append("\n");
 		sb.append("}");

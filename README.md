@@ -1,4 +1,4 @@
-# ach-model
+# moov-ach-model
 
 This library provides a model/domain objects for ACH ([Automated Clearing House](https://en.wikipedia.org/wiki/Automated_Clearing_House)) files based on the [Moov ACH API](https://github.com/moov-io/ach). ACH is the primary method of electronic money movement throughout the United States.
 
@@ -22,7 +22,39 @@ To deploy it to a remote Maven repository instead, configure the settings of the
 mvn clean deploy
 ```
 
+Then include the dependency in your project pom:
+```xml
+<dependency>
+    <groupId>barena</groupId>
+    <artifactId>moov-ach-model</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
+
+## Dependencies
+
+### Jackson Java 8 Time
+Note that this library requires the [Jackson Java8 Time Module](https://github.com/FasterXML/jackson-modules-java8/tree/master/datetime)
+in order to parse and write dates and times.
+
+In short, be sure to include the following dependency:
+```xml        
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+    <version>${jackson.version}</version>
+</dependency>
+```
+
+And register the `JavaTimeModule` with your `ObjectMapper`:
+```java
+ObjectMapper mapper = JsonMapper.builder()
+    .addModule(new JavaTimeModule()) // to add just this module
+//	.findAndAddModules() // to add all imported modules
+    .build();
+```
 
 ## Documentation for Models
 

@@ -2,16 +2,16 @@
 				 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>barena</groupId>
-	<artifactId>ach-model</artifactId>
+	<artifactId>moov-ach-model</artifactId>
 	<packaging>jar</packaging>
-	<name>ach-model</name>
+	<name>moov-ach-model</name>
 	<version>1.0.0</version>
-	<url>https://github.com/benarena/ach-model</url>
+	<url>https://github.com/benarena/moov-ach-model</url>
 	<description>ACH Model</description>
 	<scm>
-		<connection>scm:git@github.com:benarena/ach-model.git</connection>
-		<developerConnection>scm:git@github.com:benarena/ach-model.git</developerConnection>
-		<url>https://github.com/benarena/ach-model</url>
+		<connection>scm:git@github.com:benarena/moov-ach-model.git</connection>
+		<developerConnection>scm:git@github.com:benarena/moov-ach-model.git</developerConnection>
+		<url>https://github.com/benarena/moov-ach-model</url>
 	</scm>
 	<prerequisites>
 		<maven>2.2.0</maven>

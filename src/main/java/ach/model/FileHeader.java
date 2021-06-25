@@ -2,9 +2,11 @@ package ach.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -16,28 +18,52 @@ import java.util.Objects;
 @JsonInclude(Include.NON_NULL)
 public class FileHeader {
 
-	@JsonProperty("immediateOrigin")
+	@JsonProperty("id")
+	private String id;
+
+	@JsonProperty(value = "immediateOrigin", required = true)
 	private String immediateOrigin = null;
 
-	@JsonProperty("immediateOriginName")
+	@JsonProperty(value = "immediateOriginName", required = true)
 	private String immediateOriginName = null;
 
-	@JsonProperty("immediateDestination")
+	@JsonProperty(value = "immediateDestination", required = true)
 	private String immediateDestination = null;
 
-	@JsonProperty("immediateDestinationName")
+	@JsonProperty(value = "immediateDestinationName", required = true)
 	private String immediateDestinationName = null;
 
 	@JsonProperty("fileCreationTime")
 	@JsonFormat(shape = Shape.STRING, pattern = "HHmm")
 	private LocalTime fileCreationTime = null;
 
-	@JsonProperty("fileCreationDate")
+	@JsonProperty(value = "fileCreationDate", required = true)
 	@JsonFormat(shape = Shape.STRING, pattern = "yyMMdd")
 	private LocalDate fileCreationDate = null;
 
-	@JsonProperty("fileIDModifier")
+	@JsonProperty(value = "fileIDModifier", required = true)
 	private String fileIDModifier = null;
+
+	@JsonProperty("referenceCode")
+	private String referenceCode = null;
+
+	public FileHeader id(String id) {
+		this.id = id;
+		return this;
+	}
+
+	/**
+	 * File id
+	 *
+	 * @return id required
+	 **/
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public FileHeader immediateOrigin(String immediateOrigin) {
 		this.immediateOrigin = immediateOrigin;
@@ -165,6 +191,19 @@ public class FileHeader {
 		this.fileIDModifier = fileIDModifier;
 	}
 
+	public FileHeader referenceCode(String referenceCode) {
+		this.referenceCode = referenceCode;
+		return this;
+	}
+
+	public String getReferenceCode() {
+		return referenceCode;
+	}
+
+	public void setReferenceCode(final String referenceCode) {
+		this.referenceCode = referenceCode;
+	}
+
 	@Override
 	public boolean equals(java.lang.Object o) {
 		if (this == o) {
@@ -174,19 +213,21 @@ public class FileHeader {
 			return false;
 		}
 		FileHeader fileHeader = (FileHeader) o;
-		return Objects.equals(this.immediateOrigin, fileHeader.immediateOrigin) &&
+		return Objects.equals(this.id, fileHeader.id) &&
+			Objects.equals(this.immediateOrigin, fileHeader.immediateOrigin) &&
 			Objects.equals(this.immediateOriginName, fileHeader.immediateOriginName) &&
 			Objects.equals(this.immediateDestination, fileHeader.immediateDestination) &&
 			Objects.equals(this.immediateDestinationName, fileHeader.immediateDestinationName) &&
 			Objects.equals(this.fileCreationTime, fileHeader.fileCreationTime) &&
 			Objects.equals(this.fileCreationDate, fileHeader.fileCreationDate) &&
-			Objects.equals(this.fileIDModifier, fileHeader.fileIDModifier);
+			Objects.equals(this.fileIDModifier, fileHeader.fileIDModifier) &&
+			Objects.equals(this.referenceCode, fileHeader.referenceCode);
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects
-			.hash(immediateOrigin, immediateOriginName, immediateDestination, immediateDestinationName, fileCreationTime, fileCreationDate, fileIDModifier);
+			.hash(id, immediateOrigin, immediateOriginName, immediateDestination, immediateDestinationName, fileCreationTime, fileCreationDate, fileIDModifier, referenceCode);
 	}
 
 	@Override
@@ -194,6 +235,7 @@ public class FileHeader {
 		StringBuilder sb = new StringBuilder();
 		sb.append("class FileHeader {\n");
 
+		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    immediateOrigin: ").append(toIndentedString(immediateOrigin)).append("\n");
 		sb.append("    immediateOriginName: ").append(toIndentedString(immediateOriginName)).append("\n");
 		sb.append("    immediateDestination: ").append(toIndentedString(immediateDestination)).append("\n");
@@ -201,6 +243,7 @@ public class FileHeader {
 		sb.append("    fileCreationTime: ").append(toIndentedString(fileCreationTime)).append("\n");
 		sb.append("    fileCreationDate: ").append(toIndentedString(fileCreationDate)).append("\n");
 		sb.append("    fileIDModifier: ").append(toIndentedString(fileIDModifier)).append("\n");
+		sb.append("    referenceCode: ").append(toIndentedString(referenceCode)).append("\n");
 		sb.append("}");
 		return sb.toString();
 	}
