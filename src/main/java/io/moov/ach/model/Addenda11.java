@@ -1,4 +1,4 @@
-package ach.model;
+package io.moov.ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda15
+ * Addenda11
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda15 {
+public class Addenda11 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -18,16 +18,16 @@ public class Addenda15 {
 	@JsonProperty("typeCode")
 	private String typeCode = null;
 
-	@JsonProperty("receiverIDNumber")
-	private String receiverIDNumber = null;
+	@JsonProperty("originatorName")
+	private String originatorName = null;
 
-	@JsonProperty("receiverStreetAddress")
-	private String receiverStreetAddress = null;
+	@JsonProperty("originatorStreetAddress")
+	private String originatorStreetAddress = null;
 
 	@JsonProperty("entryDetailSequenceNumber")
 	private Integer entryDetailSequenceNumber = null;
 
-	public Addenda15 id(String id) {
+	public Addenda11 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -45,13 +45,13 @@ public class Addenda15 {
 		this.id = id;
 	}
 
-	public Addenda15 typeCode(String typeCode) {
+	public Addenda11 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 15 - NACHA regulations
+	 * 11 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -63,44 +63,43 @@ public class Addenda15 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda15 receiverIDNumber(String receiverIDNumber) {
-		this.receiverIDNumber = receiverIDNumber;
+	public Addenda11 originatorName(String originatorName) {
+		this.originatorName = originatorName;
 		return this;
 	}
 
 	/**
-	 * Receiver Identification Number contains the accounting number by which the Originator is known to the Receiver for descriptive purposes. NACHA Rules
-	 * recommend but do not require the RDFI to print the contents of this field on the receiver's statement.
+	 * Originator's name (your company name / name)
 	 *
-	 * @return receiverIDNumber
+	 * @return originatorName required
 	 **/
-	public String getReceiverIDNumber() {
-		return receiverIDNumber;
+	public String getOriginatorName() {
+		return originatorName;
 	}
 
-	public void setReceiverIDNumber(String receiverIDNumber) {
-		this.receiverIDNumber = receiverIDNumber;
+	public void setOriginatorName(String originatorName) {
+		this.originatorName = originatorName;
 	}
 
-	public Addenda15 receiverStreetAddress(String receiverStreetAddress) {
-		this.receiverStreetAddress = receiverStreetAddress;
+	public Addenda11 originatorStreetAddress(String originatorStreetAddress) {
+		this.originatorStreetAddress = originatorStreetAddress;
 		return this;
 	}
 
 	/**
-	 * Receiver's physical address
+	 * Originator's street address
 	 *
-	 * @return receiverStreetAddress required
+	 * @return originatorStreetAddress required
 	 **/
-	public String getReceiverStreetAddress() {
-		return receiverStreetAddress;
+	public String getOriginatorStreetAddress() {
+		return originatorStreetAddress;
 	}
 
-	public void setReceiverStreetAddress(String receiverStreetAddress) {
-		this.receiverStreetAddress = receiverStreetAddress;
+	public void setOriginatorStreetAddress(String originatorStreetAddress) {
+		this.originatorStreetAddress = originatorStreetAddress;
 	}
 
-	public Addenda15 entryDetailSequenceNumber(Integer entryDetailSequenceNumber) {
+	public Addenda11 entryDetailSequenceNumber(int entryDetailSequenceNumber) {
 		this.entryDetailSequenceNumber = entryDetailSequenceNumber;
 		return this;
 	}
@@ -127,28 +126,28 @@ public class Addenda15 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda15 addenda15 = (Addenda15) o;
-		return Objects.equals(this.id, addenda15.id) &&
-			Objects.equals(this.typeCode, addenda15.typeCode) &&
-			Objects.equals(this.receiverIDNumber, addenda15.receiverIDNumber) &&
-			Objects.equals(this.receiverStreetAddress, addenda15.receiverStreetAddress) &&
-			Objects.equals(this.entryDetailSequenceNumber, addenda15.entryDetailSequenceNumber);
+		Addenda11 addenda11 = (Addenda11) o;
+		return Objects.equals(this.id, addenda11.id) &&
+			Objects.equals(this.typeCode, addenda11.typeCode) &&
+			Objects.equals(this.originatorName, addenda11.originatorName) &&
+			Objects.equals(this.originatorStreetAddress, addenda11.originatorStreetAddress) &&
+			Objects.equals(this.entryDetailSequenceNumber, addenda11.entryDetailSequenceNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeCode, receiverIDNumber, receiverStreetAddress, entryDetailSequenceNumber);
+		return Objects.hash(id, typeCode, originatorName, originatorStreetAddress, entryDetailSequenceNumber);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda15 {\n");
+		sb.append("class Addenda11 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");
-		sb.append("    receiverIDNumber: ").append(toIndentedString(receiverIDNumber)).append("\n");
-		sb.append("    receiverStreetAddress: ").append(toIndentedString(receiverStreetAddress)).append("\n");
+		sb.append("    originatorName: ").append(toIndentedString(originatorName)).append("\n");
+		sb.append("    originatorStreetAddress: ").append(toIndentedString(originatorStreetAddress)).append("\n");
 		sb.append("    entryDetailSequenceNumber: ").append(toIndentedString(entryDetailSequenceNumber)).append("\n");
 		sb.append("}");
 		return sb.toString();

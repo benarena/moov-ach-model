@@ -1,4 +1,4 @@
-package ach.model;
+package io.moov.ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda05
+ * Addenda16
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda05 {
+public class Addenda16 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -18,16 +18,16 @@ public class Addenda05 {
 	@JsonProperty("typeCode")
 	private String typeCode = null;
 
-	@JsonProperty("paymentRelatedInformation")
-	private String paymentRelatedInformation = null;
+	@JsonProperty("receiverCityStateProvince")
+	private String receiverCityStateProvince = null;
 
-	@JsonProperty("sequenceNumber")
-	private Integer sequenceNumber = null;
+	@JsonProperty("receiverCountryPostalCode")
+	private String receiverCountryPostalCode = null;
 
 	@JsonProperty("entryDetailSequenceNumber")
 	private Integer entryDetailSequenceNumber = null;
 
-	public Addenda05 id(String id) {
+	public Addenda16 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -45,13 +45,13 @@ public class Addenda05 {
 		this.id = id;
 	}
 
-	public Addenda05 typeCode(String typeCode) {
+	public Addenda16 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 05 - NACHA regulations
+	 * 16 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -63,44 +63,44 @@ public class Addenda05 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda05 paymentRelatedInformation(String paymentRelatedInformation) {
-		this.paymentRelatedInformation = paymentRelatedInformation;
+	public Addenda16 receiverCityStateProvince(String receiverCityStateProvince) {
+		this.receiverCityStateProvince = receiverCityStateProvince;
 		return this;
 	}
 
 	/**
-	 * Text for describing the related payment
+	 * Receiver City &amp; State / Province Data elements City and State / Province  should be separated with an asterisk (*) as a delimiter and the field
+	 * should end with a backslash (\\\\).
 	 *
-	 * @return paymentRelatedInformation required
+	 * @return receiverCityStateProvince required
 	 **/
-	public String getPaymentRelatedInformation() {
-		return paymentRelatedInformation;
+	public String getReceiverCityStateProvince() {
+		return receiverCityStateProvince;
 	}
 
-	public void setPaymentRelatedInformation(String paymentRelatedInformation) {
-		this.paymentRelatedInformation = paymentRelatedInformation;
+	public void setReceiverCityStateProvince(String receiverCityStateProvince) {
+		this.receiverCityStateProvince = receiverCityStateProvince;
 	}
 
-	public Addenda05 sequenceNumber(int sequenceNumber) {
-		this.sequenceNumber = sequenceNumber;
+	public Addenda16 receiverCountryPostalCode(String receiverCountryPostalCode) {
+		this.receiverCountryPostalCode = receiverCountryPostalCode;
 		return this;
 	}
 
 	/**
-	 * SequenceNumber is consecutively assigned to each Addenda05 Record following an Entry Detail Record. The first Addenda05 sequence number must always be a
-	 * 1.
+	 * Receiver Country &amp; Postal Code Data elements must be separated by an asterisk (*) and must end with a backslash (\\\\).
 	 *
-	 * @return sequenceNumber required
+	 * @return receiverCountryPostalCode required
 	 **/
-	public Integer getSequenceNumber() {
-		return sequenceNumber;
+	public String getReceiverCountryPostalCode() {
+		return receiverCountryPostalCode;
 	}
 
-	public void setSequenceNumber(Integer sequenceNumber) {
-		this.sequenceNumber = sequenceNumber;
+	public void setReceiverCountryPostalCode(String receiverCountryPostalCode) {
+		this.receiverCountryPostalCode = receiverCountryPostalCode;
 	}
 
-	public Addenda05 entryDetailSequenceNumber(int entryDetailSequenceNumber) {
+	public Addenda16 entryDetailSequenceNumber(Integer entryDetailSequenceNumber) {
 		this.entryDetailSequenceNumber = entryDetailSequenceNumber;
 		return this;
 	}
@@ -127,28 +127,28 @@ public class Addenda05 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda05 addenda05 = (Addenda05) o;
-		return Objects.equals(this.id, addenda05.id) &&
-			Objects.equals(this.typeCode, addenda05.typeCode) &&
-			Objects.equals(this.paymentRelatedInformation, addenda05.paymentRelatedInformation) &&
-			Objects.equals(this.sequenceNumber, addenda05.sequenceNumber) &&
-			Objects.equals(this.entryDetailSequenceNumber, addenda05.entryDetailSequenceNumber);
+		Addenda16 addenda16 = (Addenda16) o;
+		return Objects.equals(this.id, addenda16.id) &&
+			Objects.equals(this.typeCode, addenda16.typeCode) &&
+			Objects.equals(this.receiverCityStateProvince, addenda16.receiverCityStateProvince) &&
+			Objects.equals(this.receiverCountryPostalCode, addenda16.receiverCountryPostalCode) &&
+			Objects.equals(this.entryDetailSequenceNumber, addenda16.entryDetailSequenceNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeCode, paymentRelatedInformation, sequenceNumber, entryDetailSequenceNumber);
+		return Objects.hash(id, typeCode, receiverCityStateProvince, receiverCountryPostalCode, entryDetailSequenceNumber);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda05 {\n");
+		sb.append("class Addenda16 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");
-		sb.append("    paymentRelatedInformation: ").append(toIndentedString(paymentRelatedInformation)).append("\n");
-		sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
+		sb.append("    receiverCityStateProvince: ").append(toIndentedString(receiverCityStateProvince)).append("\n");
+		sb.append("    receiverCountryPostalCode: ").append(toIndentedString(receiverCountryPostalCode)).append("\n");
 		sb.append("    entryDetailSequenceNumber: ").append(toIndentedString(entryDetailSequenceNumber)).append("\n");
 		sb.append("}");
 		return sb.toString();

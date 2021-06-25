@@ -1,4 +1,4 @@
-package ach.model;
+package io.moov.ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Addenda11
+ * Addenda17
  */
 @JsonInclude(Include.NON_NULL)
-public class Addenda11 {
+public class Addenda17 {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -18,16 +18,16 @@ public class Addenda11 {
 	@JsonProperty("typeCode")
 	private String typeCode = null;
 
-	@JsonProperty("originatorName")
-	private String originatorName = null;
+	@JsonProperty("paymentRelatedInformation")
+	private String paymentRelatedInformation = null;
 
-	@JsonProperty("originatorStreetAddress")
-	private String originatorStreetAddress = null;
+	@JsonProperty("sequenceNumber")
+	private Integer sequenceNumber = null;
 
 	@JsonProperty("entryDetailSequenceNumber")
 	private Integer entryDetailSequenceNumber = null;
 
-	public Addenda11 id(String id) {
+	public Addenda17 id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -45,13 +45,13 @@ public class Addenda11 {
 		this.id = id;
 	}
 
-	public Addenda11 typeCode(String typeCode) {
+	public Addenda17 typeCode(String typeCode) {
 		this.typeCode = typeCode;
 		return this;
 	}
 
 	/**
-	 * 11 - NACHA regulations
+	 * 17 - NACHA regulations
 	 *
 	 * @return typeCode required
 	 **/
@@ -63,43 +63,44 @@ public class Addenda11 {
 		this.typeCode = typeCode;
 	}
 
-	public Addenda11 originatorName(String originatorName) {
-		this.originatorName = originatorName;
+	public Addenda17 paymentRelatedInformation(String paymentRelatedInformation) {
+		this.paymentRelatedInformation = paymentRelatedInformation;
 		return this;
 	}
 
 	/**
-	 * Originator's name (your company name / name)
+	 * Additional information related to the payment
 	 *
-	 * @return originatorName required
+	 * @return paymentRelatedInformation required
 	 **/
-	public String getOriginatorName() {
-		return originatorName;
+	public String getPaymentRelatedInformation() {
+		return paymentRelatedInformation;
 	}
 
-	public void setOriginatorName(String originatorName) {
-		this.originatorName = originatorName;
+	public void setPaymentRelatedInformation(String paymentRelatedInformation) {
+		this.paymentRelatedInformation = paymentRelatedInformation;
 	}
 
-	public Addenda11 originatorStreetAddress(String originatorStreetAddress) {
-		this.originatorStreetAddress = originatorStreetAddress;
+	public Addenda17 sequenceNumber(Integer sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 		return this;
 	}
 
 	/**
-	 * Originator's street address
+	 * SequenceNumber is consecutively assigned to each Addenda17 Record following an Entry Detail Record. The first Addenda17 sequence number must always be a
+	 * 1.
 	 *
-	 * @return originatorStreetAddress required
+	 * @return sequenceNumber required
 	 **/
-	public String getOriginatorStreetAddress() {
-		return originatorStreetAddress;
+	public Integer getSequenceNumber() {
+		return sequenceNumber;
 	}
 
-	public void setOriginatorStreetAddress(String originatorStreetAddress) {
-		this.originatorStreetAddress = originatorStreetAddress;
+	public void setSequenceNumber(Integer sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 	}
 
-	public Addenda11 entryDetailSequenceNumber(int entryDetailSequenceNumber) {
+	public Addenda17 entryDetailSequenceNumber(Integer entryDetailSequenceNumber) {
 		this.entryDetailSequenceNumber = entryDetailSequenceNumber;
 		return this;
 	}
@@ -126,28 +127,28 @@ public class Addenda11 {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		Addenda11 addenda11 = (Addenda11) o;
-		return Objects.equals(this.id, addenda11.id) &&
-			Objects.equals(this.typeCode, addenda11.typeCode) &&
-			Objects.equals(this.originatorName, addenda11.originatorName) &&
-			Objects.equals(this.originatorStreetAddress, addenda11.originatorStreetAddress) &&
-			Objects.equals(this.entryDetailSequenceNumber, addenda11.entryDetailSequenceNumber);
+		Addenda17 addenda17 = (Addenda17) o;
+		return Objects.equals(this.id, addenda17.id) &&
+			Objects.equals(this.typeCode, addenda17.typeCode) &&
+			Objects.equals(this.paymentRelatedInformation, addenda17.paymentRelatedInformation) &&
+			Objects.equals(this.sequenceNumber, addenda17.sequenceNumber) &&
+			Objects.equals(this.entryDetailSequenceNumber, addenda17.entryDetailSequenceNumber);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeCode, originatorName, originatorStreetAddress, entryDetailSequenceNumber);
+		return Objects.hash(id, typeCode, paymentRelatedInformation, sequenceNumber, entryDetailSequenceNumber);
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("class Addenda11 {\n");
+		sb.append("class Addenda17 {\n");
 
 		sb.append("    id: ").append(toIndentedString(id)).append("\n");
 		sb.append("    typeCode: ").append(toIndentedString(typeCode)).append("\n");
-		sb.append("    originatorName: ").append(toIndentedString(originatorName)).append("\n");
-		sb.append("    originatorStreetAddress: ").append(toIndentedString(originatorStreetAddress)).append("\n");
+		sb.append("    paymentRelatedInformation: ").append(toIndentedString(paymentRelatedInformation)).append("\n");
+		sb.append("    sequenceNumber: ").append(toIndentedString(sequenceNumber)).append("\n");
 		sb.append("    entryDetailSequenceNumber: ").append(toIndentedString(entryDetailSequenceNumber)).append("\n");
 		sb.append("}");
 		return sb.toString();

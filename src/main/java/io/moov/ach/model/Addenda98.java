@@ -1,4 +1,4 @@
-package ach.model;
+package io.moov.ach.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
