@@ -8,32 +8,16 @@ Building the API client library requires:
 1. Java 11+
 2. Maven
 
-## Installation
-
-To install the library to your local Maven repository, simply execute:
-
-```shell
-mvn clean install
-```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn clean deploy
-```
+## Dependencies
 
 Then include the dependency in your project pom:
 ```xml
 <dependency>
-    <groupId>barena</groupId>
+    <groupId>io.github.benarena</groupId>
     <artifactId>moov-ach-model</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
-
-Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
-
-## Dependencies
 
 ### Jackson Java 8 Time
 Note that this library requires the [Jackson Java8 Time Module](https://github.com/FasterXML/jackson-modules-java8/tree/master/datetime)
@@ -86,6 +70,8 @@ ObjectMapper mapper = JsonMapper.builder()
  - [IATEntryDetail](docs/IATEntryDetail.md)
  - [Offset](docs/Offset.md)
  - [ValidateOpts](docs/ValidateOpts.md)
+
+## Publishing
 
 ## History
 

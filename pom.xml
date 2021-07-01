@@ -16,6 +16,19 @@
 		<url>https://github.com/benarena/moov-ach-model</url>
 	</scm>
 
+	<developers>
+		<developer>
+			<id>barena</id>
+			<name>Ben Arena</name>
+			<email>ben.arena@gmail.com</email>
+			<roles>
+				<role>Project-Administrator</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>America/Los_Angeles</timezone>
+		</developer>
+	</developers>
+
 	<prerequisites>
 		<maven>3.8.1</maven>
 	</prerequisites>
@@ -128,7 +141,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
+				<version>1.6.8</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
