@@ -12,7 +12,7 @@ import java.util.Objects;
  * File
  */
 @JsonInclude(Include.NON_NULL)
-public class File {
+public class AchFile {
 
 	@JsonProperty("id")
 	private String id = null;
@@ -38,7 +38,7 @@ public class File {
 	@JsonProperty("ReturnEntries")
 	private List<Batch> returnEntries = null;
 
-	public File id(String id) {
+	public AchFile id(String id) {
 		this.id = id;
 		return this;
 	}
@@ -56,7 +56,7 @@ public class File {
 		this.id = id;
 	}
 
-	public File fileHeader(FileHeader fileHeader) {
+	public AchFile fileHeader(FileHeader fileHeader) {
 		this.fileHeader = fileHeader;
 		return this;
 	}
@@ -74,12 +74,12 @@ public class File {
 		this.fileHeader = fileHeader;
 	}
 
-	public File batches(List<Batch> batches) {
+	public AchFile batches(List<Batch> batches) {
 		this.batches = batches;
 		return this;
 	}
 
-	public File addBatchesItem(Batch batchesItem) {
+	public AchFile addBatchesItem(Batch batchesItem) {
 		if (this.batches == null) {
 			this.batches = new ArrayList<Batch>();
 		}
@@ -100,12 +100,12 @@ public class File {
 		this.batches = batches;
 	}
 
-	public File iaTBatches(List<IATBatch> iaTBatches) {
+	public AchFile iaTBatches(List<IATBatch> iaTBatches) {
 		this.iaTBatches = iaTBatches;
 		return this;
 	}
 
-	public File addIaTBatchesItem(IATBatch iaTBatchesItem) {
+	public AchFile addIaTBatchesItem(IATBatch iaTBatchesItem) {
 		if (this.iaTBatches == null) {
 			this.iaTBatches = new ArrayList<IATBatch>();
 		}
@@ -126,7 +126,7 @@ public class File {
 		this.iaTBatches = iaTBatches;
 	}
 
-	public File fileControl(FileControl fileControl) {
+	public AchFile fileControl(FileControl fileControl) {
 		this.fileControl = fileControl;
 		return this;
 	}
@@ -144,7 +144,7 @@ public class File {
 		this.fileControl = fileControl;
 	}
 
-	public File fileADVControl(ADVFileControl fileADVControl) {
+	public AchFile fileADVControl(ADVFileControl fileADVControl) {
 		this.fileADVControl = fileADVControl;
 		return this;
 	}
@@ -157,12 +157,12 @@ public class File {
 		this.fileADVControl = fileADVControl;
 	}
 
-	public File notificationOfChange(List<Batch> notificationOfChange) {
+	public AchFile notificationOfChange(List<Batch> notificationOfChange) {
 		this.notificationOfChange = notificationOfChange;
 		return this;
 	}
 
-	public File addNotificationOfChangeItem(Batch notificationOfChangeItem) {
+	public AchFile addNotificationOfChangeItem(Batch notificationOfChangeItem) {
 		if (this.notificationOfChange == null) {
 			this.notificationOfChange = new ArrayList<Batch>();
 		}
@@ -183,12 +183,12 @@ public class File {
 		this.notificationOfChange = notificationOfChange;
 	}
 
-	public File returnEntries(List<Batch> returnEntries) {
+	public AchFile returnEntries(List<Batch> returnEntries) {
 		this.returnEntries = returnEntries;
 		return this;
 	}
 
-	public File addReturnEntriesItem(Batch returnEntriesItem) {
+	public AchFile addReturnEntriesItem(Batch returnEntriesItem) {
 		if (this.returnEntries == null) {
 			this.returnEntries = new ArrayList<Batch>();
 		}
@@ -217,15 +217,15 @@ public class File {
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
-		File file = (File) o;
-		return Objects.equals(this.id, file.id) &&
-			Objects.equals(this.fileHeader, file.fileHeader) &&
-			Objects.equals(this.batches, file.batches) &&
-			Objects.equals(this.iaTBatches, file.iaTBatches) &&
-			Objects.equals(this.fileControl, file.fileControl) &&
-			Objects.equals(this.fileADVControl, file.fileADVControl) &&
-			Objects.equals(this.notificationOfChange, file.notificationOfChange) &&
-			Objects.equals(this.returnEntries, file.returnEntries);
+		AchFile achFile = (AchFile) o;
+		return Objects.equals(this.id, achFile.id) &&
+			Objects.equals(this.fileHeader, achFile.fileHeader) &&
+			Objects.equals(this.batches, achFile.batches) &&
+			Objects.equals(this.iaTBatches, achFile.iaTBatches) &&
+			Objects.equals(this.fileControl, achFile.fileControl) &&
+			Objects.equals(this.fileADVControl, achFile.fileADVControl) &&
+			Objects.equals(this.notificationOfChange, achFile.notificationOfChange) &&
+			Objects.equals(this.returnEntries, achFile.returnEntries);
 	}
 
 	@Override

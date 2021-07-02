@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
@@ -19,7 +20,7 @@ public class BatchHeader {
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
-	private Integer serviceClassCode = null;
+	private ServiceClassCode serviceClassCode = null;
 
 	@JsonProperty("companyName")
 	private String companyName = null;
@@ -70,7 +71,7 @@ public class BatchHeader {
 		this.id = id;
 	}
 
-	public BatchHeader serviceClassCode(Integer serviceClassCode) {
+	public BatchHeader serviceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 		return this;
 	}
@@ -80,11 +81,11 @@ public class BatchHeader {
 	 *
 	 * @return serviceClassCode required
 	 **/
-	public Integer getServiceClassCode() {
+	public ServiceClassCode getServiceClassCode() {
 		return serviceClassCode;
 	}
 
-	public void setServiceClassCode(Integer serviceClassCode) {
+	public void setServiceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 	}
 

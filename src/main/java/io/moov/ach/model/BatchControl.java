@@ -16,7 +16,7 @@ public class BatchControl {
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
-	private Integer serviceClassCode = null;
+	private ServiceClassCode serviceClassCode = null;
 
 	@JsonProperty("entryAddendaCount")
 	private Integer entryAddendaCount = null;
@@ -60,7 +60,7 @@ public class BatchControl {
 		this.id = id;
 	}
 
-	public BatchControl serviceClassCode(Integer serviceClassCode) {
+	public BatchControl serviceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 		return this;
 	}
@@ -70,11 +70,11 @@ public class BatchControl {
 	 *
 	 * @return serviceClassCode required
 	 **/
-	public Integer getServiceClassCode() {
+	public ServiceClassCode getServiceClassCode() {
 		return serviceClassCode;
 	}
 
-	public void setServiceClassCode(Integer serviceClassCode) {
+	public void setServiceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 	}
 
