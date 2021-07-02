@@ -18,7 +18,7 @@ public class EntryDetail {
 	private String id = null;
 
 	@JsonProperty("transactionCode")
-	private Integer transactionCode = null;
+	private TransactionCode transactionCode = null;
 
 	@JsonProperty("RDFIIdentification")
 	private String rdFIIdentification = null;
@@ -80,7 +80,7 @@ public class EntryDetail {
 		this.id = id;
 	}
 
-	public EntryDetail transactionCode(Integer transactionCode) {
+	public EntryDetail transactionCode(TransactionCode transactionCode) {
 		this.transactionCode = transactionCode;
 		return this;
 	}
@@ -92,11 +92,11 @@ public class EntryDetail {
 	 *
 	 * @return transactionCode required
 	 **/
-	public Integer getTransactionCode() {
+	public TransactionCode getTransactionCode() {
 		return transactionCode;
 	}
 
-	public void setTransactionCode(Integer transactionCode) {
+	public void setTransactionCode(TransactionCode transactionCode) {
 		this.transactionCode = transactionCode;
 	}
 

@@ -16,7 +16,7 @@ public class ADVBatchControl {
 	private String id = null;
 
 	@JsonProperty("serviceClassCode")
-	private Integer serviceClassCode = null;
+	private ServiceClassCode serviceClassCode = null;
 
 	@JsonProperty("entryAddendaCount")
 	private Integer entryAddendaCount = null;
@@ -57,7 +57,7 @@ public class ADVBatchControl {
 		this.id = id;
 	}
 
-	public ADVBatchControl serviceClassCode(Integer serviceClassCode) {
+	public ADVBatchControl serviceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 		return this;
 	}
@@ -67,11 +67,11 @@ public class ADVBatchControl {
 	 *
 	 * @return serviceClassCode required
 	 **/
-	public Integer getServiceClassCode() {
+	public ServiceClassCode getServiceClassCode() {
 		return serviceClassCode;
 	}
 
-	public void setServiceClassCode(Integer serviceClassCode) {
+	public void setServiceClassCode(ServiceClassCode serviceClassCode) {
 		this.serviceClassCode = serviceClassCode;
 	}
 
