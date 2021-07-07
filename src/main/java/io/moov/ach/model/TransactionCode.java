@@ -149,4 +149,14 @@ public enum TransactionCode {
 	public Integer getCode() {
 		return code;
 	}
+
+	public boolean isCredit() {
+		final int checkDigit = code % 10; // second digit
+		return checkDigit >= 1 && checkDigit <= 4;
+	}
+
+	public boolean isDebit() {
+		final int checkDigit = code % 10; // second digit
+		return checkDigit >= 5;
+	}
 }
